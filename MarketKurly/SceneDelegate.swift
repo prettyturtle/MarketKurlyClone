@@ -19,8 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = .systemBackground
         
         let rootNavigationController = UINavigationController(rootViewController: TabBarController())
-        rootNavigationController.navigationBar.backgroundColor = UIColor(named: "kurlyColor")
         rootNavigationController.navigationBar.tintColor = .white
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = UIColor(named: "kurlyColor")
+        rootNavigationController.navigationBar.standardAppearance = navigationBarAppearance
+        rootNavigationController.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()

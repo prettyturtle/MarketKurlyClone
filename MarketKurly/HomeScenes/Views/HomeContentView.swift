@@ -9,6 +9,17 @@ import UIKit
 import SnapKit
 
 class HomeContentView: UIView {
+
+    private lazy var sectionTitleLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = .systemFont(ofSize: 18.0, weight: .semibold)
+        label.textColor = .label
+        label.text = "이 상품 어때요?"
+        
+        return label
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -62,10 +73,18 @@ extension HomeContentView: UICollectionViewDataSource {
 
 private extension HomeContentView {
     func setupLayout() {
-        addSubview(collectionView)
+        [
+            sectionTitleLabel,
+            collectionView
+        ].forEach { addSubview($0) }
+        
+        sectionTitleLabel.snp.makeConstraints { make in
+            make.leading.top.trailing.equalToSuperview().inset(16.0)
+        }
         
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(sectionTitleLabel.snp.bottom).offset(16.0)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
 }
