@@ -17,7 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = TabBarController()
+        
+        let rootNavigationController = UINavigationController(rootViewController: TabBarController())
+        rootNavigationController.navigationBar.backgroundColor = UIColor(named: "kurlyColor")
+        rootNavigationController.navigationBar.tintColor = .white
+        
+        window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
     }
 

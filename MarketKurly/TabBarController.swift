@@ -9,16 +9,18 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    let homeViewController = UINavigationController(rootViewController: HomeViewController())
-    let recommendViewController = UINavigationController(rootViewController: UIViewController())
-    let categoryViewController = UINavigationController(rootViewController: UIViewController())
-    let searchViewController = UINavigationController(rootViewController: UIViewController())
-    let infoViewController = UINavigationController(rootViewController: UIViewController())
+    let homeViewController = HomeViewController()
+    let recommendViewController = UIViewController()
+    let categoryViewController = UIViewController()
+    let searchViewController = UIViewController()
+    let infoViewController = UIViewController()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigationItem()
         
         viewControllers = [
             homeViewController,
@@ -54,6 +56,41 @@ class TabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "person.fill")
         )
         
-        view.tintColor = UIColor(red: 86 / 255, green: 11 / 255, blue: 123 / 255, alpha: 1)
+        view.tintColor = UIColor(named: "kurlyColor")
+    }
+}
+
+private extension TabBarController {
+    func setupNavigationItem() {
+        // logo
+        let logoImage = UIImage(named: "kurly_logo")
+        
+        let logoImageView: UIImageView = {
+            let imageView = UIImageView()
+            
+            imageView.image = logoImage
+            imageView.clipsToBounds = true
+            imageView.contentMode = .scaleAspectFit
+            
+            return imageView
+        }()
+        
+        navigationItem.titleView = logoImageView
+        
+        // BarButtonItem
+        let iconDeliverySetting = UIBarButtonItem(
+            image: UIImage(named: "ico_delivery_setting"),
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        let iconCart = UIBarButtonItem(
+            image: UIImage(named: "ico_cart_on"),
+            style: .plain,
+            target: self,
+            action: nil
+        )
+
+        navigationItem.rightBarButtonItems = [iconCart, iconDeliverySetting]
     }
 }
