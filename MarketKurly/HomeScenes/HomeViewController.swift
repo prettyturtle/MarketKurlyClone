@@ -10,6 +10,8 @@ import SnapKit
 
 class HomeViewController: UIViewController {
 
+    private let data = ["이 상품 어때요?", "놓치면 후회할 가격", "인기 신상품 랭킹", "지금 가장 핫한 상품"]
+    
     private let scrollView = UIScrollView()
     private let scrollContentView = UIView()
     
@@ -24,7 +26,7 @@ class HomeViewController: UIViewController {
     }()
     
     private lazy var homeMainBannerView = HomeMainBannerView(frame: .zero)
-    private lazy var homeContentView = HomeContentView(frame: .zero)
+    private lazy var homeContentView = HomeContentView(contentList: data[0])
     private let testView = UIView()
     
     override func viewDidLoad() {
@@ -69,7 +71,7 @@ private extension HomeViewController {
         
         homeContentView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(homeMainBannerView.snp.width).multipliedBy(978.0/1080.0)
+            make.height.equalTo(homeContentView.snp.width).multipliedBy(978.0/1080.0)
         }
         
         testView.snp.makeConstraints { make in

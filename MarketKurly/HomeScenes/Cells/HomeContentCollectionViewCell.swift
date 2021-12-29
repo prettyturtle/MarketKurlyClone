@@ -59,9 +59,6 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         
         button.setImage(UIImage(named: "ico_cart"), for: .normal)
-//        button.tintColor = .white
-//        button.backgroundColor = UIColor(named: "kurlyColor")
-//        button.layer.cornerRadius = 18.0
         
         return button
     }()

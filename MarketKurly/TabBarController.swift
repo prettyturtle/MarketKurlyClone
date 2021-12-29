@@ -22,6 +22,8 @@ class TabBarController: UITabBarController {
         
         setupNavigationItem()
         
+        tabBar.backgroundColor = .systemBackground
+        
         viewControllers = [
             homeViewController,
             recommendViewController,

@@ -10,12 +10,14 @@ import SnapKit
 
 class HomeContentView: UIView {
 
+    private let contentList: String
+    
     private lazy var sectionTitleLabel: UILabel = {
         let label = UILabel()
         
         label.font = .systemFont(ofSize: 18.0, weight: .semibold)
         label.textColor = .label
-        label.text = "이 상품 어때요?"
+        label.text = contentList
         
         return label
     }()
@@ -34,8 +36,10 @@ class HomeContentView: UIView {
         return collectionView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(contentList: String) {
+        self.contentList = contentList
+        
+        super.init(frame: .zero)
         
         setupLayout()
     }
