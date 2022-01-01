@@ -73,6 +73,7 @@ private extension HomeMainBannerView {
         
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+            make.height.equalTo(snp.width).multipliedBy(978.0/1080.0)
         }
     }
 }

@@ -67,7 +67,7 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
         setupLayout()
         
         posterImageView.image = UIImage(named: "contentImage\(index)")
-        titleLabel.text = "\(index)번째 제목입니다"
+        titleLabel.text = ["\(index)번째 제목입니다\(index)번째 제목입니다\(index)번째 제목입니다", "\(index)번째 제목입니다"].randomElement()
         discountRateLabel.text = "\(index)%"
         priceLabel.text = "\(index),000원"
         discountedPriceLabel.text = "5000원"

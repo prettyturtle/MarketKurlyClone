@@ -89,6 +89,7 @@ private extension HomeContentView {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(sectionTitleLabel.snp.bottom).offset(16.0)
             make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(300.0)
         }
     }
 }

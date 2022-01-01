@@ -80,19 +80,29 @@ private extension TabBarController {
         navigationItem.titleView = logoImageView
         
         // BarButtonItem
-        let iconDeliverySetting = UIBarButtonItem(
-            image: UIImage(named: "ico_delivery_setting"),
-            style: .plain,
-            target: self,
-            action: nil
-        )
-        let iconCart = UIBarButtonItem(
-            image: UIImage(named: "ico_cart_on"),
-            style: .plain,
-            target: self,
-            action: nil
-        )
+        let iconDeliverySettingBarButton: UIButton = {
+            let button = UIButton()
+            
+            button.setImage(UIImage(named: "ico_delivery_setting"), for: .normal)
+            button.frame = CGRect(x: 0.0, y: 0.0, width: 24.0, height: 24.0)
+            button.tintColor = .white
 
-        navigationItem.rightBarButtonItems = [iconCart, iconDeliverySetting]
+            return button
+        }()
+        
+        let iconCartBarButton: UIButton = {
+            let button = UIButton()
+            
+            button.setImage(UIImage(named: "ico_cart_on"), for: .normal)
+            button.frame = CGRect(x: 0.0, y: 0.0, width: 24.0, height: 24.0)
+            button.tintColor = .white
+            
+            return button
+        }()
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(customView: iconCartBarButton),
+            UIBarButtonItem(customView: iconDeliverySettingBarButton)
+        ]
     }
 }
