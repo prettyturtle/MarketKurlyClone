@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
         let stackView = UIStackView()
         
         stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 0.0
+        stackView.distribution = .fillEqually
+        stackView.spacing = 8.0
         
         return stackView
     }()

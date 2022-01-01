@@ -52,7 +52,8 @@ class HomeContentView: UIView {
 extension HomeContentView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width * 0.4
-        return CGSize(width: width, height: width * 2)
+        let height = collectionView.frame.height
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -89,7 +90,7 @@ private extension HomeContentView {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(sectionTitleLabel.snp.bottom).offset(16.0)
             make.leading.trailing.bottom.equalToSuperview()
-            make.height.equalTo(300.0)
+            make.bottom.equalToSuperview()
         }
     }
 }
