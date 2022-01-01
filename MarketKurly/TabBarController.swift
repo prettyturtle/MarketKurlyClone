@@ -73,11 +73,20 @@ private extension TabBarController {
             imageView.image = logoImage
             imageView.clipsToBounds = true
             imageView.contentMode = .scaleAspectFit
+            imageView.bounds = CGRect(x: 0.0, y: 0.0, width: 60.0, height: 40.0)
             
             return imageView
         }()
         
-        navigationItem.titleView = logoImageView
+        let logoTitleView: UIView = {
+            let view = UIView()
+
+            view.addSubview(logoImageView)
+
+            return view
+        }()
+        
+        navigationItem.titleView = logoTitleView
         
         // BarButtonItem
         let iconDeliverySettingBarButton: UIButton = {
