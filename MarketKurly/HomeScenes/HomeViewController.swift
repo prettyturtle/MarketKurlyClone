@@ -39,9 +39,7 @@ private extension HomeViewController {
         view.addSubview(scrollView)
         
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.edges.equalToSuperview()
         }
         
         scrollView.addSubview(scrollContentView)

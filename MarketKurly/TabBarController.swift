@@ -10,8 +10,7 @@ import UIKit
 class TabBarController: UITabBarController {
     
     let homeViewController = HomeViewController()
-    let recommendViewController = UIViewController()
-    let categoryViewController = UIViewController()
+    let categoryViewController = CategoryViewController()
     let searchViewController = UIViewController()
     let infoViewController = UIViewController()
     
@@ -26,7 +25,6 @@ class TabBarController: UITabBarController {
         
         viewControllers = [
             homeViewController,
-            recommendViewController,
             categoryViewController,
             searchViewController,
             infoViewController
@@ -36,11 +34,6 @@ class TabBarController: UITabBarController {
             title: "홈",
             image: UIImage(systemName: "house"),
             selectedImage: UIImage(systemName: "house.fill")
-        )
-        recommendViewController.tabBarItem = UITabBarItem(
-            title: "추천",
-            image: UIImage(systemName: "star"),
-            selectedImage: UIImage(systemName: "star.fill")
         )
         categoryViewController.tabBarItem = UITabBarItem(
             title: "카테고리",
