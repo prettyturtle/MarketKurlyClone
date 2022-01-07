@@ -11,6 +11,8 @@ import SnapKit
 class CategoryTableView: UIView {
     private var categoryList: [Category]
     
+    var currentTappedTitleSectionNumber: Int?
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         
@@ -18,7 +20,6 @@ class CategoryTableView: UIView {
         tableView.delegate = self
         tableView.register(CategoryTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: CategoryTableViewHeaderView.identifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
-
         
         return tableView
     }()
@@ -39,7 +40,8 @@ extension CategoryTableView: UITableViewDelegate {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CategoryTableViewHeaderView.identifier) as? CategoryTableViewHeaderView else { return nil }
         
         let categoryItem = categoryList[section]
-        header.setupView(categoryItem: categoryItem)
+        header.setupView(categoryItem: categoryItem, section: section)
+        header.delegate = self
         
         return header
     }
@@ -50,7 +52,13 @@ extension CategoryTableView: UITableViewDataSource {
         categoryList.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryList[section].subCategory.count
+        switch section {
+        case currentTappedTitleSectionNumber:
+            return categoryList[section].subCategory.count
+        default:
+            return 0
+        }
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell") else { return UITableViewCell() }
@@ -58,6 +66,29 @@ extension CategoryTableView: UITableViewDataSource {
         cell.textLabel?.text = categoryList[indexPath.section].subCategory[indexPath.row]
         
         return cell
+    }
+}
+
+extension CategoryTableView: CategoryTableViewHeaderViewDelegate {
+    func didTapCategoryTitle(section: Int?) {
+        
+        // TODO: 아래 코드 깔끔하게 고치기
+        guard let section = section else { return }
+//        var indexSetArray = [Int]()
+        
+        if currentTappedTitleSectionNumber == section {
+            currentTappedTitleSectionNumber = nil
+            tableView.reloadSections([section], with: .automatic)
+        } else {
+            guard let pastSectionNumber = currentTappedTitleSectionNumber else {
+                currentTappedTitleSectionNumber = section
+                tableView.reloadSections([currentTappedTitleSectionNumber!], with: .automatic)
+                return
+            }
+            currentTappedTitleSectionNumber = section
+            tableView.reloadSections([pastSectionNumber, currentTappedTitleSectionNumber!], with: .automatic)
+        }
+        
     }
 }
 

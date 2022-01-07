@@ -8,9 +8,15 @@
 import UIKit
 import SnapKit
 
+protocol CategoryTableViewHeaderViewDelegate: AnyObject {
+    func didTapCategoryTitle(section: Int?)
+}
+
 class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
     
     static let identifier = "CategoryTableViewHeaderView"
+    
+    var delegate: CategoryTableViewHeaderViewDelegate?
     
     private lazy var categoryIconImageView: UIImageView = {
         let imageView = UIImageView()
@@ -36,19 +42,20 @@ class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
         return imageView
     }()
     
-    func setupView(categoryItem: Category) {
+    func setupView(categoryItem: Category, section: Int) {
         setupLayout()
         
         titleLabel.text = categoryItem.title
         categoryIconImageView.image = UIImage(named: categoryItem.image)
+        
+        self.tag = section
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapCategoryTitle(_:)))
         self.addGestureRecognizer(tap)
     }
     
     @objc func didTapCategoryTitle(_ sender: UITapGestureRecognizer) {
-        print(sender)
-        // TODO: 카테고리 선택 시, 서브메뉴 보이기
+        delegate?.didTapCategoryTitle(section: sender.view?.tag)
     }
 }
 
