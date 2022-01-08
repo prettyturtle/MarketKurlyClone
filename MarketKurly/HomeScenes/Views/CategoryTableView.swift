@@ -17,6 +17,7 @@ class CategoryTableView: UIView {
         let tableView = UITableView(frame: .zero, style: .grouped)
         
         tableView.separatorStyle = .none
+        tableView.sectionFooterHeight = 0.3
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CategoryTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: CategoryTableViewHeaderView.identifier)
@@ -43,11 +44,16 @@ extension CategoryTableView: UITableViewDelegate {
         let categoryItem = categoryList[section]
         header.setupView(categoryItem: categoryItem, section: section)
         if currentTappedTitleSectionNumber == section {
-            header.changeColor()
+            header.didSelected()
         }
         header.delegate = self
         
         return header
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let sectionSeparator = UIView()
+        sectionSeparator.backgroundColor = .separator
+        return sectionSeparator
     }
 }
 
@@ -62,7 +68,6 @@ extension CategoryTableView: UITableViewDataSource {
         default:
             return 0
         }
-        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier) as? CategoryTableViewCell else { return UITableViewCell() }

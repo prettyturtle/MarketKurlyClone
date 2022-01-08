@@ -55,9 +55,10 @@ class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
         self.addGestureRecognizer(tap)
     }
     
-    func changeColor() {
+    func didSelected() {
         titleLabel.textColor = UIColor(named: "kurlyColor")
         categoryIconImageView.tintColor = UIColor(named: "kurlyColor")
+        disclosureIndicator.image = UIImage(systemName: "chevron.up")
     }
     
     @objc func didTapCategoryTitle(_ sender: UITapGestureRecognizer) {
