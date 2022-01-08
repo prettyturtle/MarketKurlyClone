@@ -45,7 +45,7 @@ class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
     
     func setupView(categoryItem: Category, section: Int) {
         setupLayout()
-        
+        contentView.backgroundColor = .white
         titleLabel.text = categoryItem.title
         categoryIconImageView.image = UIImage(named: categoryItem.image)
         
