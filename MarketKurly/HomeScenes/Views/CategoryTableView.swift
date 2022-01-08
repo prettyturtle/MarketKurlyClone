@@ -11,15 +11,16 @@ import SnapKit
 class CategoryTableView: UIView {
     private var categoryList: [Category]
     
-    var currentTappedTitleSectionNumber: Int?
+    private var currentTappedTitleSectionNumber: Int?
     
     lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         
+        tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CategoryTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: CategoryTableViewHeaderView.identifier)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: CategoryTableViewCell.identifier)
         
         return tableView
     }()
@@ -41,6 +42,9 @@ extension CategoryTableView: UITableViewDelegate {
         
         let categoryItem = categoryList[section]
         header.setupView(categoryItem: categoryItem, section: section)
+        if currentTappedTitleSectionNumber == section {
+            header.changeColor()
+        }
         header.delegate = self
         
         return header
@@ -61,9 +65,11 @@ extension CategoryTableView: UITableViewDataSource {
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell") else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier) as? CategoryTableViewCell else { return UITableViewCell() }
         
-        cell.textLabel?.text = categoryList[indexPath.section].subCategory[indexPath.row]
+        let subTitle = categoryList[indexPath.section].subCategory[indexPath.row]
+        cell.selectionStyle = .none
+        cell.setupView(subTitle: subTitle)
         
         return cell
     }
@@ -72,23 +78,19 @@ extension CategoryTableView: UITableViewDataSource {
 extension CategoryTableView: CategoryTableViewHeaderViewDelegate {
     func didTapCategoryTitle(section: Int?) {
         
-        // TODO: 아래 코드 깔끔하게 고치기
         guard let section = section else { return }
-//        var indexSetArray = [Int]()
-        
+        guard let pastSectionNumber = currentTappedTitleSectionNumber else {
+            currentTappedTitleSectionNumber = section
+            tableView.reloadSections([section], with: .automatic)
+            return
+        }
         if currentTappedTitleSectionNumber == section {
             currentTappedTitleSectionNumber = nil
             tableView.reloadSections([section], with: .automatic)
         } else {
-            guard let pastSectionNumber = currentTappedTitleSectionNumber else {
-                currentTappedTitleSectionNumber = section
-                tableView.reloadSections([currentTappedTitleSectionNumber!], with: .automatic)
-                return
-            }
             currentTappedTitleSectionNumber = section
-            tableView.reloadSections([pastSectionNumber, currentTappedTitleSectionNumber!], with: .automatic)
+            tableView.reloadSections([pastSectionNumber, section], with: .automatic)
         }
-        
     }
 }
 

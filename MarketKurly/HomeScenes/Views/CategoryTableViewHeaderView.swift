@@ -22,6 +22,7 @@ class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
         let imageView = UIImageView()
         
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .darkGray
         
         return imageView
     }()
@@ -54,6 +55,11 @@ class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
         self.addGestureRecognizer(tap)
     }
     
+    func changeColor() {
+        titleLabel.textColor = UIColor(named: "kurlyColor")
+        categoryIconImageView.tintColor = UIColor(named: "kurlyColor")
+    }
+    
     @objc func didTapCategoryTitle(_ sender: UITapGestureRecognizer) {
         delegate?.didTapCategoryTitle(section: sender.view?.tag)
     }
@@ -71,7 +77,7 @@ private extension CategoryTableViewHeaderView {
             make.leading.equalToSuperview().inset(16.0)
             make.top.equalToSuperview().inset(8.0)
             make.bottom.equalToSuperview().inset(8.0)
-            make.width.height.equalTo(30.0)
+            make.width.equalTo(30.0)
         }
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(categoryIconImageView)

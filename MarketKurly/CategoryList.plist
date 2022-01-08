@@ -132,5 +132,19 @@
 			<string>케이크·파이·디저트</string>
 		</array>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>건강식품</string>
+		<key>image</key>
+		<string>icon_category_10</string>
+		<key>subCategory</key>
+		<array>
+			<string>전체보기</string>
+			<string>영양제</string>
+			<string>유산균</string>
+			<string>홍삼·인삼·꿀</string>
+			<string>케이크·파이·디저트</string>
+		</array>
+	</dict>
 </array>
 </plist>
