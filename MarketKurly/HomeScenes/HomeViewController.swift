@@ -10,8 +10,9 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
-    private let data = ["이 상품 어때요?", "놓치면 후회할 가격", "인기 신상품 랭킹", "지금 가장 핫한 상품"]
-    
+//    private let data = ["이 상품 어때요?", "놓치면 후회할 가격", "인기 신상품 랭킹", "지금 가장 핫한 상품"]
+    private var contentSectionList = [ContentSection]()
+
     private let scrollView = UIScrollView()
     private let scrollContentView = UIView()
     
@@ -29,11 +30,23 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         setupLayout()
     }
 }
 
 private extension HomeViewController {
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "HomeContentList", withExtension: "plist") else { return }
+        do {
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([ContentSection].self, from: data)
+            contentSectionList = result
+        } catch {
+            print("extension HomeViewController - func fetchData() - catch Error")
+        }
+    }
+    
     func setupLayout() {
         
         view.addSubview(scrollView)
@@ -56,8 +69,8 @@ private extension HomeViewController {
         
         stackView.addArrangedSubview(homeMainBannerView)
         
-        data.forEach {
-            let homeContentView = HomeContentView(contentList: $0)
+        contentSectionList.forEach {
+            let homeContentView = HomeContentView(contentSection: $0)
             stackView.addArrangedSubview(homeContentView)
         }
     }

@@ -41,7 +41,6 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         
         label.font = .systemFont(ofSize: 14.0, weight: .bold)
-        label.textColor = .label
         
         return label
     }()
@@ -63,14 +62,22 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    func setupView(index: Int) {
+    func setupView(content: Content) {
         setupLayout()
         
-        posterImageView.image = UIImage(named: "contentImage\(index)")
-        titleLabel.text = ["\(index)번째 제목입니다\(index)번째 제목입니다\(index)번째 제목입니다", "\(index)번째 제목입니다"].randomElement()
-        discountRateLabel.text = "\(index)%"
-        priceLabel.text = "\(index),000원"
-        discountedPriceLabel.text = "5000원"
+        posterImageView.image = UIImage(named: "contentImage0")
+        titleLabel.text = content.title
+        priceLabel.text = content.price
+
+        if content.isDiscounted {
+            guard let discountRate = content.discountRate,
+                  let originalPrice = content.originalPrice else { return }
+            discountRateLabel.text = "\(discountRate)%"
+            discountedPriceLabel.text = originalPrice
+        } else {
+            discountRateLabel.isHidden = true
+            discountedPriceLabel.isHidden = true
+        }
     }
     
 }

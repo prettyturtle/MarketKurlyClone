@@ -10,14 +10,12 @@ import SnapKit
 
 class HomeContentView: UIView {
 
-    private let contentList: String
+    private let contentSection: ContentSection
     
     private lazy var sectionTitleLabel: UILabel = {
         let label = UILabel()
         
         label.font = .systemFont(ofSize: 18.0, weight: .semibold)
-        label.textColor = .label
-        label.text = contentList
         
         return label
     }()
@@ -36,11 +34,11 @@ class HomeContentView: UIView {
         return collectionView
     }()
     
-    init(contentList: String) {
-        self.contentList = contentList
-        
+    init(contentSection: ContentSection) {
+        self.contentSection = contentSection
         super.init(frame: .zero)
         
+        sectionTitleLabel.text = contentSection.sectionName
         setupLayout()
     }
     
@@ -64,13 +62,13 @@ extension HomeContentView: UICollectionViewDelegateFlowLayout {
 }
 extension HomeContentView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return contentSection.contentList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeContentCollectionViewCell", for: indexPath) as? HomeContentCollectionViewCell else { return UICollectionViewCell() }
         
-        let index = indexPath.row
-        cell.setupView(index: index)
+        let content = contentSection.contentList[indexPath.row]
+        cell.setupView(content: content)
         
         return cell
     }
