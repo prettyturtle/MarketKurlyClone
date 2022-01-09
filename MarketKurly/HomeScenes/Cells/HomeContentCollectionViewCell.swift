@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class HomeContentCollectionViewCell: UICollectionViewCell {
     private lazy var posterImageView: UIImageView = {
@@ -65,7 +66,7 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
     func setupView(content: Content) {
         setupLayout()
         
-        posterImageView.image = UIImage(named: "contentImage0")
+        posterImageView.kf.setImage(with: content.imageURL)
         titleLabel.text = content.title
         priceLabel.text = content.price
 

@@ -18,7 +18,7 @@
 				<integer>0</integer>
 				<key>originalPrice</key>
 				<string></string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1465267181723l0.jpg</string>
 			</dict>
 			<dict>
@@ -32,7 +32,7 @@
 				<integer>15</integer>
 				<key>originalPrice</key>
 				<string>2,480원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1637936327133l0.jpg</string>
 			</dict>
 			<dict>
@@ -46,7 +46,7 @@
 				<integer>9</integer>
 				<key>originalPrice</key>
 				<string>12,000원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1623141723820l0.jpg</string>
 			</dict>
 			<dict>
@@ -60,7 +60,7 @@
 				<integer>0</integer>
 				<key>originalPrice</key>
 				<string></string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1477568051626l0.jpg</string>
 			</dict>
 			<dict>
@@ -74,7 +74,7 @@
 				<integer>10</integer>
 				<key>originalPrice</key>
 				<string>2,400원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1622166405389l0.jpg</string>
 			</dict>
 			<dict>
@@ -88,7 +88,7 @@
 				<integer>7</integer>
 				<key>originalPrice</key>
 				<string>16,000원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1479720511684l0.jpg</string>
 			</dict>
 		</array>
@@ -109,7 +109,7 @@
 				<integer>0</integer>
 				<key>originalPrice</key>
 				<string></string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1465267181723l0.jpg</string>
 			</dict>
 			<dict>
@@ -123,7 +123,7 @@
 				<integer>15</integer>
 				<key>originalPrice</key>
 				<string>2,480원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1637936327133l0.jpg</string>
 			</dict>
 			<dict>
@@ -137,7 +137,7 @@
 				<integer>9</integer>
 				<key>originalPrice</key>
 				<string>12,000원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1623141723820l0.jpg</string>
 			</dict>
 			<dict>
@@ -151,7 +151,7 @@
 				<integer>0</integer>
 				<key>originalPrice</key>
 				<string></string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1477568051626l0.jpg</string>
 			</dict>
 			<dict>
@@ -165,7 +165,7 @@
 				<integer>10</integer>
 				<key>originalPrice</key>
 				<string>2,400원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1622166405389l0.jpg</string>
 			</dict>
 			<dict>
@@ -179,7 +179,7 @@
 				<integer>7</integer>
 				<key>originalPrice</key>
 				<string>16,000원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1479720511684l0.jpg</string>
 			</dict>
 		</array>
@@ -200,7 +200,7 @@
 				<integer>0</integer>
 				<key>originalPrice</key>
 				<string></string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1465267181723l0.jpg</string>
 			</dict>
 			<dict>
@@ -214,7 +214,7 @@
 				<integer>15</integer>
 				<key>originalPrice</key>
 				<string>2,480원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1637936327133l0.jpg</string>
 			</dict>
 			<dict>
@@ -228,7 +228,7 @@
 				<integer>9</integer>
 				<key>originalPrice</key>
 				<string>12,000원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1623141723820l0.jpg</string>
 			</dict>
 			<dict>
@@ -242,7 +242,7 @@
 				<integer>0</integer>
 				<key>originalPrice</key>
 				<string></string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1477568051626l0.jpg</string>
 			</dict>
 			<dict>
@@ -256,7 +256,7 @@
 				<integer>10</integer>
 				<key>originalPrice</key>
 				<string>2,400원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1622166405389l0.jpg</string>
 			</dict>
 			<dict>
@@ -270,7 +270,7 @@
 				<integer>7</integer>
 				<key>originalPrice</key>
 				<string>16,000원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1479720511684l0.jpg</string>
 			</dict>
 		</array>
@@ -291,7 +291,7 @@
 				<integer>0</integer>
 				<key>originalPrice</key>
 				<string></string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1465267181723l0.jpg</string>
 			</dict>
 			<dict>
@@ -305,7 +305,7 @@
 				<integer>15</integer>
 				<key>originalPrice</key>
 				<string>2,480원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1637936327133l0.jpg</string>
 			</dict>
 			<dict>
@@ -319,7 +319,7 @@
 				<integer>9</integer>
 				<key>originalPrice</key>
 				<string>12,000원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1623141723820l0.jpg</string>
 			</dict>
 			<dict>
@@ -333,7 +333,7 @@
 				<integer>0</integer>
 				<key>originalPrice</key>
 				<string></string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1477568051626l0.jpg</string>
 			</dict>
 			<dict>
@@ -347,7 +347,7 @@
 				<integer>10</integer>
 				<key>originalPrice</key>
 				<string>2,400원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1622166405389l0.jpg</string>
 			</dict>
 			<dict>
@@ -361,7 +361,7 @@
 				<integer>7</integer>
 				<key>originalPrice</key>
 				<string>16,000원</string>
-				<key>imageURL</key>
+				<key>imageURLString</key>
 				<string>https://img-cf.kurly.com/shop/data/goods/1479720511684l0.jpg</string>
 			</dict>
 		</array>

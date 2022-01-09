@@ -18,5 +18,6 @@ struct Content: Decodable {
     let isDiscounted: Bool
     let discountRate: Int?
     let originalPrice: String?
-    let imageURL: String
+    let imageURLString: String
+    var imageURL: URL? { URL(string: imageURLString) }
 }

@@ -14,7 +14,8 @@
 		6B00B8DB2778422B004CAE95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B00B8D92778422B004CAE95 /* LaunchScreen.storyboard */; };
 		6B4536222789980B0009778A /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4536212789980B0009778A /* Content.swift */; };
 		6B453624278998E60009778A /* HomeContentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B453623278998E60009778A /* HomeContentList.plist */; };
-		6B6576512778E5B800C9EB93 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6576502778E5B800C9EB93 /* SnapKit */; };
+		6B4536272789A4E80009778A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6B4536262789A4E80009778A /* SnapKit */; };
+		6B45362A2789A4F90009778A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6B4536292789A4F90009778A /* Kingfisher */; };
 		6B6576532778F10B00C9EB93 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6576522778F10B00C9EB93 /* TabBarController.swift */; };
 		6B6576562778F50A00C9EB93 /* HomeMainBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6576552778F50A00C9EB93 /* HomeMainBannerView.swift */; };
 		6B6576582778F9BF00C9EB93 /* HomeMainBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6576572778F9BF00C9EB93 /* HomeMainBannerCollectionViewCell.swift */; };
@@ -60,7 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B6576512778E5B800C9EB93 /* SnapKit in Frameworks */,
+				6B45362A2789A4F90009778A /* Kingfisher in Frameworks */,
+				6B4536272789A4E80009778A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +162,8 @@
 			);
 			name = MarketKurly;
 			packageProductDependencies = (
-				6B6576502778E5B800C9EB93 /* SnapKit */,
+				6B4536262789A4E80009778A /* SnapKit */,
+				6B4536292789A4F90009778A /* Kingfisher */,
 			);
 			productName = MarketKurly;
 			productReference = 6B00B8CB2778422A004CAE95 /* MarketKurly.app */;
@@ -191,7 +194,8 @@
 			);
 			mainGroup = 6B00B8C227784229004CAE95;
 			packageReferences = (
-				6B65764F2778E5B800C9EB93 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6B4536252789A4E80009778A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6B4536282789A4F90009778A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 6B00B8CC2778422A004CAE95 /* Products */;
 			projectDirPath = "";
@@ -448,21 +452,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6B65764F2778E5B800C9EB93 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		6B4536252789A4E80009778A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		6B4536282789A4F90009778A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6B6576502778E5B800C9EB93 /* SnapKit */ = {
+		6B4536262789A4E80009778A /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B65764F2778E5B800C9EB93 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 6B4536252789A4E80009778A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		6B4536292789A4F90009778A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B4536282789A4F90009778A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
