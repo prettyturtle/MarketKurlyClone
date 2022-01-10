@@ -12,9 +12,7 @@ class TabBarController: UITabBarController {
     let homeViewController = HomeViewController()
     let categoryViewController = CategoryViewController()
     let searchViewController = UIViewController()
-    let infoViewController = UIViewController()
-    
-    
+    let infoViewController = MyKurlyViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
