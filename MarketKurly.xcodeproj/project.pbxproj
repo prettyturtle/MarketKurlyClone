@@ -31,6 +31,7 @@
 		6BF6D1852782C67C00B8B5C0 /* CategoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6D1842782C67B00B8B5C0 /* CategoryTableView.swift */; };
 		6BF6D1872782C7A800B8B5C0 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6D1862782C7A800B8B5C0 /* CategoryCollectionView.swift */; };
 		6BF83600278B15310068A3CE /* MyKurlySignInButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF835FF278B15310068A3CE /* MyKurlySignInButtonView.swift */; };
+		6BF83602278BFCEB0068A3CE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF83601278BFCEB0068A3CE /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		6BF6D1842782C67B00B8B5C0 /* CategoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableView.swift; sourceTree = "<group>"; };
 		6BF6D1862782C7A800B8B5C0 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		6BF835FF278B15310068A3CE /* MyKurlySignInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKurlySignInButtonView.swift; sourceTree = "<group>"; };
+		6BF83601278BFCEB0068A3CE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				6B00B8D22778422A004CAE95 /* HomeViewController.swift */,
 				6B994368278060AC009E0092 /* CategoryViewController.swift */,
 				6BC3C8B4278ACEAB00004210 /* MyKurlyViewController.swift */,
+				6BF83601278BFCEB0068A3CE /* SignInViewController.swift */,
 				6B65765E2779CA8C00C9EB93 /* Views */,
 				6B6576592778F9C600C9EB93 /* Cells */,
 			);
@@ -240,6 +243,7 @@
 				6BC3C8B5278ACEAB00004210 /* MyKurlyViewController.swift in Sources */,
 				6B65765D2779CA7000C9EB93 /* HomeContentView.swift in Sources */,
 				6B889BBF27886F0400E7FDF7 /* CategoryTableViewCell.swift in Sources */,
+				6BF83602278BFCEB0068A3CE /* SignInViewController.swift in Sources */,
 				6B889BB827882E9800E7FDF7 /* CategoryTableViewHeaderView.swift in Sources */,
 				6B6576532778F10B00C9EB93 /* TabBarController.swift in Sources */,
 				6BF6D1852782C67C00B8B5C0 /* CategoryTableView.swift in Sources */,

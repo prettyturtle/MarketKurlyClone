@@ -8,8 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol MyKurlySignInButtonViewDelegate {
+    func moveToSignInViewController()
+}
+
 class MyKurlySignInButtonView: UIView {
-        
+    
+    var delegate: MyKurlySignInButtonViewDelegate?
+    
     private lazy var messageLabel: UILabel = {
         let label = UILabel()
         
@@ -17,7 +23,6 @@ class MyKurlySignInButtonView: UIView {
         label.font = .systemFont(ofSize: 16.0, weight: .light)
         label.numberOfLines = 2
         label.textAlignment = .center
-        label.setContentHuggingPriority(UILayoutPriority(10001), for: .vertical)
         
         return label
     }()
@@ -49,7 +54,7 @@ class MyKurlySignInButtonView: UIView {
         return button
     }()
     @objc func didTapMoveToSignInButton() {
-        print("didTapMoveToSignInButton hello world")
+        delegate?.moveToSignInViewController()
     }
     
     init() {
@@ -76,12 +81,10 @@ private extension MyKurlySignInButtonView {
         messageLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(32.0)
             make.leading.trailing.equalToSuperview().inset(16.0)
-//            make.centerX.equalToSuperview()
         }
         benefitButton.snp.makeConstraints { make in
             make.top.equalTo(messageLabel.snp.bottom).offset(4.0)
             make.centerX.equalTo(messageLabel)
-            make.height.equalTo(15.0)
         }
         moveToSignInButton.snp.makeConstraints { make in
             make.top.equalTo(benefitButton.snp.bottom).offset(16.0)

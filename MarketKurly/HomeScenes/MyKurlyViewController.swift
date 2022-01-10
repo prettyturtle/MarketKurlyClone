@@ -58,6 +58,7 @@ class MyKurlyViewController: UIViewController {
         
         view.backgroundColor = .systemGroupedBackground
         setupLayout()
+        myKurlySignInButtonView.delegate = self
     }
 }
 
@@ -78,6 +79,13 @@ extension MyKurlyViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         
         return cell
+    }
+}
+extension MyKurlyViewController: MyKurlySignInButtonViewDelegate {
+    func moveToSignInViewController() {
+        let signInViewController = UINavigationController(rootViewController: SignInViewController())
+        signInViewController.modalPresentationStyle = .fullScreen
+        present(signInViewController, animated: true)
     }
 }
 
