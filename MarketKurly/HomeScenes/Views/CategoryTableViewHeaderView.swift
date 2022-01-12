@@ -45,7 +45,7 @@ class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
     
     func setupView(categoryItem: Category, section: Int) {
         setupLayout()
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .systemBackground
         titleLabel.text = categoryItem.title
         categoryIconImageView.image = UIImage(named: categoryItem.image)
         
@@ -56,8 +56,8 @@ class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
     }
     
     func didSelected() {
-        titleLabel.textColor = UIColor(named: "kurlyColor")
-        categoryIconImageView.tintColor = UIColor(named: "kurlyColor")
+        titleLabel.textColor = .mainColor
+        categoryIconImageView.tintColor = .mainColor
         disclosureIndicator.image = UIImage(systemName: "chevron.up")
     }
     

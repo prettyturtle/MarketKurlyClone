@@ -49,7 +49,7 @@ class SignInViewController: UIViewController {
         
         button.setTitle("로그인", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(named: "kurlyColor")
+        button.backgroundColor = .mainColor
         button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
         button.layer.cornerRadius = 4.0
         
@@ -134,10 +134,10 @@ class SignInViewController: UIViewController {
         let button = UIButton()
         
         button.setTitle("회원가입", for: .normal)
-        button.setTitleColor(UIColor(named: "kurlyColor"), for: .normal)
+        button.setTitleColor(.mainColor, for: .normal)
         button.backgroundColor = .white
         button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
-        button.layer.borderColor = UIColor(named: "kurlyColor")?.cgColor
+        button.layer.borderColor = UIColor.mainColor.cgColor
         button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 4.0
         

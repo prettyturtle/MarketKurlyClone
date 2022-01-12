@@ -42,7 +42,7 @@ class MyKurlySignInButtonView: UIView {
         
         button.setTitle("로그인/회원가입", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(named: "kurlyColor")
+        button.backgroundColor = .mainColor
         button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
         button.layer.cornerRadius = 4.0
         button.addTarget(
