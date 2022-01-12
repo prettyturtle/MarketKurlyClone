@@ -147,7 +147,11 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        setupNavigationItem()
+        navigationController?.setupPresentedNavigationItem(
+            self,
+            titleOfNavigationItem: "로그인",
+            leftBarButtonAction: #selector(dismissSignInViewController)
+        )
         setupLayout()
     }
     
@@ -206,16 +210,5 @@ private extension SignInViewController {
             make.trailing.equalTo(idTextField.snp.trailing)
             make.height.equalTo(48.0)
         }
-    }
-    
-    func setupNavigationItem() {
-        navigationItem.title = "로그인"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "xmark"),
-            style: .plain,
-            target: self,
-            action: #selector(dismissSignInViewController)
-        )
-        navigationItem.leftBarButtonItem?.tintColor = .label
     }
 }

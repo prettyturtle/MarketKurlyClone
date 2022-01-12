@@ -76,7 +76,17 @@ private extension HomeViewController {
         
         contentSectionList.forEach {
             let homeContentView = HomeContentView(contentSection: $0)
+            homeContentView.delegate = self
             stackView.addArrangedSubview(homeContentView)
         }
+    }
+}
+
+extension HomeViewController: HomeContentViewCellDelegate {
+    func presentAddCartViewController(content: Content?) {
+        let rootViewController = AddCartViewController()
+        rootViewController.content = content
+        let addCartNavigationViewController = UINavigationController(rootViewController: rootViewController)
+        present(addCartNavigationViewController, animated: true, completion: nil)
     }
 }

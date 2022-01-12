@@ -79,4 +79,17 @@ extension UINavigationController {
             UIBarButtonItem(customView: iconDeliverySettingBarButton)
         ]
     }
+    
+    func setupPresentedNavigationItem(_ target: UIViewController, titleOfNavigationItem: String?, leftBarButtonAction: Selector?) {
+        guard let title = titleOfNavigationItem else { return }
+        
+        target.navigationItem.title = title
+        target.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "xmark"),
+            style: .plain,
+            target: target,
+            action: leftBarButtonAction
+        )
+        target.navigationItem.leftBarButtonItem?.tintColor = .label
+    }
 }

@@ -9,7 +9,16 @@ import UIKit
 import SnapKit
 import Kingfisher
 
+protocol didTapHomeContentCollectionViewCellCartButtonDelegate {
+    func presentAddCartViewController(content: Content?)
+}
+
 class HomeContentCollectionViewCell: UICollectionViewCell {
+    
+    var delegate: didTapHomeContentCollectionViewCellCartButtonDelegate?
+    
+    private var content: Content?
+    
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
         
@@ -46,7 +55,7 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var discountedPriceLabel: UILabel = {
+    private lazy var originalPriceLabel: UILabel = {
         let label = UILabel()
         
         label.font = .systemFont(ofSize: 12.0, weight: .regular)
@@ -60,12 +69,22 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
         
         button.setImage(UIImage(named: "ico_cart"), for: .normal)
         
+        button.addTarget(
+            self,
+            action: #selector(didTapHomeContentCollectionViewCellCartButton),
+            for: .touchUpInside
+        )
+        
         return button
     }()
     
+    @objc func didTapHomeContentCollectionViewCellCartButton() {
+        delegate?.presentAddCartViewController(content: content)
+    }
+    
     func setupView(content: Content) {
         setupLayout()
-        
+        self.content = content
         posterImageView.kf.setImage(with: content.imageURL)
         titleLabel.text = content.title
         priceLabel.text = content.price
@@ -74,10 +93,10 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
             guard let discountRate = content.discountRate,
                   let originalPrice = content.originalPrice else { return }
             discountRateLabel.text = "\(discountRate)%"
-            discountedPriceLabel.text = originalPrice
+            originalPriceLabel.text = originalPrice
         } else {
             discountRateLabel.isHidden = true
-            discountedPriceLabel.isHidden = true
+            originalPriceLabel.isHidden = true
         }
     }
     
@@ -90,7 +109,7 @@ private extension HomeContentCollectionViewCell {
             titleLabel,
             discountRateLabel,
             priceLabel,
-            discountedPriceLabel,
+            originalPriceLabel,
             cartButton
         ].forEach { addSubview($0) }
         
@@ -114,7 +133,7 @@ private extension HomeContentCollectionViewCell {
             make.top.equalTo(discountRateLabel.snp.top)
         }
         
-        discountedPriceLabel.snp.makeConstraints { make in
+        originalPriceLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.top.equalTo(discountRateLabel.snp.bottom)
         }

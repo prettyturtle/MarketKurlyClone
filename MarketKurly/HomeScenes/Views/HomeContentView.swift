@@ -8,8 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol HomeContentViewCellDelegate {
+    func presentAddCartViewController(content: Content?)
+}
+
 class HomeContentView: UIView {
 
+    var delegate: HomeContentViewCellDelegate?
+    
     private let contentSection: ContentSection
     
     private lazy var sectionTitleLabel: UILabel = {
@@ -70,7 +76,15 @@ extension HomeContentView: UICollectionViewDataSource {
         let content = contentSection.contentList[indexPath.row]
         cell.setupView(content: content)
         
+        cell.delegate = self
+        
         return cell
+    }
+}
+
+extension HomeContentView: didTapHomeContentCollectionViewCellCartButtonDelegate {
+    func presentAddCartViewController(content: Content?) {
+        delegate?.presentAddCartViewController(content: content)
     }
 }
 
