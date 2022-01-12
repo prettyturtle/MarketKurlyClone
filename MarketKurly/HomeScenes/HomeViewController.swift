@@ -10,7 +10,6 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
-//    private let data = ["이 상품 어때요?", "놓치면 후회할 가격", "인기 신상품 랭킹", "지금 가장 핫한 상품"]
     private var contentSectionList = [ContentSection]()
 
     private let scrollView = UIScrollView()
@@ -31,6 +30,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
+        navigationController?.setupNavigationItem(
+            self,
+            titleType: .image,
+            image: UIImage(named: "kurly_logo"),
+            text: nil
+        )
         setupLayout()
     }
 }

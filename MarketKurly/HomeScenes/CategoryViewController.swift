@@ -30,12 +30,16 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setupNavigationItem(
+            self,
+            titleType: .text,
+            image: nil,
+            text: "카테고리"
+        )
         fetchData()
         setupLayout()
     }
 }
-
-
 
 private extension CategoryViewController {
     

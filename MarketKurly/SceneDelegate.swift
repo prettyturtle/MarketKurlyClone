@@ -17,13 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
         
-        let rootNavigationController = UINavigationController(rootViewController: TabBarController())
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.backgroundColor = UIColor(named: "kurlyColor")
-        rootNavigationController.navigationBar.standardAppearance = navigationBarAppearance
-        rootNavigationController.navigationBar.scrollEdgeAppearance = navigationBarAppearance
-        
-        window?.rootViewController = rootNavigationController
+        let rootViewController = TabBarController()
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
     }
 }

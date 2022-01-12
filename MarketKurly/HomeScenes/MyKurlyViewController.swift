@@ -57,6 +57,12 @@ class MyKurlyViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemGroupedBackground
+        navigationController?.setupNavigationItem(
+            self,
+            titleType: .text,
+            image: nil,
+            text: "마이컬리"
+        )
         setupLayout()
         myKurlySignInButtonView.delegate = self
     }
