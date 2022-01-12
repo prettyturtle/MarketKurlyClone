@@ -21,6 +21,7 @@
 		6B6576582778F9BF00C9EB93 /* HomeMainBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6576572778F9BF00C9EB93 /* HomeMainBannerCollectionViewCell.swift */; };
 		6B65765D2779CA7000C9EB93 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65765C2779CA7000C9EB93 /* HomeContentView.swift */; };
 		6B6576602779CC2C00C9EB93 /* HomeContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65765F2779CC2C00C9EB93 /* HomeContentCollectionViewCell.swift */; };
+		6B686410278EA0F100BCF053 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 6B68640F278EA0F100BCF053 /* Toast */; };
 		6B889BB827882E9800E7FDF7 /* CategoryTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B889BB727882E9800E7FDF7 /* CategoryTableViewHeaderView.swift */; };
 		6B889BBA27883DC200E7FDF7 /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B889BB927883DC200E7FDF7 /* CategoryList.plist */; };
 		6B889BBC278841B300E7FDF7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B889BBB278841B300E7FDF7 /* Category.swift */; };
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B686410278EA0F100BCF053 /* Toast in Frameworks */,
 				6B45362A2789A4F90009778A /* Kingfisher in Frameworks */,
 				6B4536272789A4E80009778A /* SnapKit in Frameworks */,
 			);
@@ -173,6 +175,7 @@
 			packageProductDependencies = (
 				6B4536262789A4E80009778A /* SnapKit */,
 				6B4536292789A4F90009778A /* Kingfisher */,
+				6B68640F278EA0F100BCF053 /* Toast */,
 			);
 			productName = MarketKurly;
 			productReference = 6B00B8CB2778422A004CAE95 /* MarketKurly.app */;
@@ -205,6 +208,7 @@
 			packageReferences = (
 				6B4536252789A4E80009778A /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6B4536282789A4F90009778A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				6B68640E278EA0F100BCF053 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 6B00B8CC2778422A004CAE95 /* Products */;
 			projectDirPath = "";
@@ -480,6 +484,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		6B68640E278EA0F100BCF053 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -492,6 +504,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6B4536282789A4F90009778A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		6B68640F278EA0F100BCF053 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B68640E278EA0F100BCF053 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

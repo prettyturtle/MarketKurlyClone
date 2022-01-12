@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Toast
 
 class SignInViewController: UIViewController {
     
@@ -21,6 +22,8 @@ class SignInViewController: UIViewController {
         textField.layer.borderColor = UIColor.separator.cgColor
         textField.layer.cornerRadius = 4.0
         
+        textField.delegate = self
+        
         return textField
     }()
     
@@ -34,6 +37,9 @@ class SignInViewController: UIViewController {
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.separator.cgColor
         textField.layer.cornerRadius = 4.0
+        textField.isSecureTextEntry = true
+        
+        textField.delegate = self
         
         return textField
     }()
@@ -47,8 +53,36 @@ class SignInViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
         button.layer.cornerRadius = 4.0
         
+        button.addTarget(self, action: #selector(didTapSignInButton), for: .touchUpInside)
+        
         return button
     }()
+    
+    @objc func didTapSignInButton() {
+        var style = ToastStyle()
+        style.backgroundColor = .systemPink
+        
+        if idTextField.text != "" && pwTextField.text != "" {
+            print("로그인됨!")
+        } else {
+            
+            if idTextField.text == "" {
+                navigationController?.navigationBar.makeToast(
+                    "아이디를 입력해주세요.",
+                    duration: 2.0,
+                    position: .top,
+                    style: style
+                )
+            } else {
+                navigationController?.navigationBar.makeToast(
+                    "비밀번호를 입력해주세요.",
+                    duration: 2.0,
+                    position: .top,
+                    style: style
+                )
+            }
+        }
+    }
     
     private lazy var findIdButton: UIButton = {
         let button = UIButton()
@@ -120,6 +154,19 @@ class SignInViewController: UIViewController {
     @objc func dismissSignInViewController() {
         dismiss(animated: true)
     }
+}
+
+extension SignInViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.label.cgColor
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.separator.cgColor
+    }
+    
 }
 
 private extension SignInViewController {
