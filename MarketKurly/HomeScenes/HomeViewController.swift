@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
             text: nil
         )
         setupLayout()
+        view.backgroundColor = .systemBackground
     }
 }
 

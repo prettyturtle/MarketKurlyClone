@@ -37,22 +37,13 @@ class MyKurlySignInButtonView: UIView {
         return button
     }()
     
-    private lazy var moveToSignInButton: UIButton = {
-        let button = UIButton()
-        
-        button.setTitle("로그인/회원가입", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .mainColor
-        button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
-        button.layer.cornerRadius = 4.0
-        button.addTarget(
-            self,
-            action: #selector(didTapMoveToSignInButton),
-            for: .touchUpInside
-        )
-        
-        return button
-    }()
+    private lazy var moveToSignInButton = UIButton.mainColorButton(
+        self,
+        title: "로그인/회원가입",
+        isReversed: false,
+        action: #selector(didTapMoveToSignInButton)
+    )
+    
     @objc func didTapMoveToSignInButton() {
         delegate?.moveToSignInViewController()
     }
@@ -89,7 +80,6 @@ private extension MyKurlySignInButtonView {
         moveToSignInButton.snp.makeConstraints { make in
             make.top.equalTo(benefitButton.snp.bottom).offset(16.0)
             make.leading.trailing.equalToSuperview().inset(16.0)
-            make.height.equalTo(48.0)
             make.bottom.equalToSuperview().inset(32.0)
         }
     }

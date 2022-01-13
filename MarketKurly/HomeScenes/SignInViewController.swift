@@ -44,19 +44,12 @@ class SignInViewController: UIViewController {
         return textField
     }()
     
-    private lazy var signInButton: UIButton = {
-        let button = UIButton()
-        
-        button.setTitle("로그인", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .mainColor
-        button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
-        button.layer.cornerRadius = 4.0
-        
-        button.addTarget(self, action: #selector(didTapSignInButton), for: .touchUpInside)
-        
-        return button
-    }()
+    private lazy var signInButton = UIButton.mainColorButton(
+        self,
+        title: "로그인",
+        isReversed: false,
+        action: #selector(didTapSignInButton)
+    )
     
     @objc func didTapSignInButton() {
         var style = ToastStyle()
@@ -130,19 +123,12 @@ class SignInViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var moveToSignUpButton: UIButton = {
-        let button = UIButton()
-        
-        button.setTitle("회원가입", for: .normal)
-        button.setTitleColor(.mainColor, for: .normal)
-        button.backgroundColor = .white
-        button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
-        button.layer.borderColor = UIColor.mainColor.cgColor
-        button.layer.borderWidth = 0.5
-        button.layer.cornerRadius = 4.0
-        
-        return button
-    }()
+    private lazy var moveToSignUpButton = UIButton.mainColorButton(
+        self,
+        title: "회원가입",
+        isReversed: true,
+        action: #selector(dismissSignInViewController)
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -198,7 +184,6 @@ private extension SignInViewController {
             make.top.equalTo(pwTextField.snp.bottom).offset(16.0)
             make.leading.equalTo(idTextField.snp.leading)
             make.trailing.equalTo(idTextField.snp.trailing)
-            make.height.equalTo(48.0)
         }
         findButtonStackView.snp.makeConstraints { make in
             make.top.equalTo(signInButton.snp.bottom).offset(16.0)

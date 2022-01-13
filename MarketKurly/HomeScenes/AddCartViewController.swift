@@ -81,20 +81,44 @@ class AddCartViewController: UIViewController {
         guard let count = Int(countLabel.text!) else { return }
         
         if count == 1 {
-            print("최소 주문 수량은 1개 입니다.")
+            let alertController = UIAlertController(
+                title: nil,
+                message: "최소 구매 수량은 1개입니다",
+                preferredStyle: .alert
+            )
+            alertController.addAction(
+                UIAlertAction(title: "확인", style: .default, handler: nil)
+            )
+            present(alertController, animated: true, completion: nil)
         } else {
             countLabel.text = "\(count - 1)"
+            
+            guard let content = content else { return }
+            let contentPrice = content.price
+                .replacingOccurrences(of: ",", with: "")
+                .replacingOccurrences(of: "원", with: "")
+            
+            let currentTotalPriceInt = (Int(contentPrice) ?? 0) * (count - 1)
+            let currentTotalPriceText = insertComma(value: currentTotalPriceInt)
+            
+            addCartButton.setTitle("\(currentTotalPriceText)원 장바구니 담기", for: .normal)
         }
     }
     
     @objc func didTapPlusButton() {
         guard let count = Int(countLabel.text!) else { return }
         
-        if count == 99 {
-            print("최대 주문 수량은 99개 입니다.")
-        } else {
-            countLabel.text = "\(count + 1)"
-        }
+        countLabel.text = "\(count + 1)"
+        
+        guard let content = content else { return }
+        let contentPrice = content.price
+            .replacingOccurrences(of: ",", with: "")
+            .replacingOccurrences(of: "원", with: "")
+        
+        let currentTotalPriceInt = (Int(contentPrice) ?? 0) * (count + 1)
+        let currentTotalPriceText = insertComma(value: currentTotalPriceInt)
+        
+        addCartButton.setTitle("\(currentTotalPriceText)원 장바구니 담기", for: .normal)
         
     }
     
@@ -115,6 +139,25 @@ class AddCartViewController: UIViewController {
         return stackView
     }()
     
+    private let addCartButton = UIButton.mainColorButton(
+        self,
+        title: "",
+        isReversed: false,
+        action: #selector(didTapAddCartButton)
+    )
+    
+    @objc func didTapAddCartButton() {
+        let alertController = UIAlertController(
+            title: nil,
+            message: "장바구니 담기 성공!",
+            preferredStyle: .alert
+        )
+        alertController.addAction(
+            UIAlertAction(title: "확인", style: .default, handler: nil)
+        )
+        present(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -133,20 +176,29 @@ class AddCartViewController: UIViewController {
         setupLayout()
         
         guard let content = content else { return }
-        
         titleLabel.text = content.title
         priceLabel.text = content.price
         originalPriceLabel.text = content.originalPrice
+        addCartButton.setTitle("\(content.price) 장바구니 담기", for: .normal)
     }
 }
 
 private extension AddCartViewController {
+    func insertComma(value: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: value))
+        
+        return result ?? ""
+    }
+    
     func setupLayout() {
         [
             titleLabel,
             priceLabel,
             originalPriceLabel,
-            countStepper
+            countStepper,
+            addCartButton
         ].forEach { view.addSubview($0) }
         
         titleLabel.snp.makeConstraints { make in
@@ -165,6 +217,10 @@ private extension AddCartViewController {
             make.bottom.equalTo(priceLabel.snp.bottom)
             make.width.equalTo(94.0)
             make.height.equalTo(32.0)
+        }
+        addCartButton.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16.0)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(16.0)
         }
     }
 }

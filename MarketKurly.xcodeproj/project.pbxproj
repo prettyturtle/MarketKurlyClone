@@ -25,6 +25,7 @@
 		6B686414278EB6BE00BCF053 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B686413278EB6BE00BCF053 /* UINavigationController+.swift */; };
 		6B686417278F331F00BCF053 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B686416278F331F00BCF053 /* UIColor+.swift */; };
 		6B686419278F38EB00BCF053 /* AddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B686418278F38EB00BCF053 /* AddCartViewController.swift */; };
+		6B68641B2790538100BCF053 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68641A2790538100BCF053 /* UIButton+.swift */; };
 		6B889BB827882E9800E7FDF7 /* CategoryTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B889BB727882E9800E7FDF7 /* CategoryTableViewHeaderView.swift */; };
 		6B889BBA27883DC200E7FDF7 /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B889BB927883DC200E7FDF7 /* CategoryList.plist */; };
 		6B889BBC278841B300E7FDF7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B889BBB278841B300E7FDF7 /* Category.swift */; };
@@ -56,6 +57,7 @@
 		6B686413278EB6BE00BCF053 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		6B686416278F331F00BCF053 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		6B686418278F38EB00BCF053 /* AddCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartViewController.swift; sourceTree = "<group>"; };
+		6B68641A2790538100BCF053 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		6B889BB727882E9800E7FDF7 /* CategoryTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderView.swift; sourceTree = "<group>"; };
 		6B889BB927883DC200E7FDF7 /* CategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
 		6B889BBB278841B300E7FDF7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				6B686413278EB6BE00BCF053 /* UINavigationController+.swift */,
 				6B686416278F331F00BCF053 /* UIColor+.swift */,
+				6B68641A2790538100BCF053 /* UIButton+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				6B889BBF27886F0400E7FDF7 /* CategoryTableViewCell.swift in Sources */,
 				6BF83602278BFCEB0068A3CE /* SignInViewController.swift in Sources */,
 				6B889BB827882E9800E7FDF7 /* CategoryTableViewHeaderView.swift in Sources */,
+				6B68641B2790538100BCF053 /* UIButton+.swift in Sources */,
 				6B6576532778F10B00C9EB93 /* TabBarController.swift in Sources */,
 				6BF6D1852782C67C00B8B5C0 /* CategoryTableView.swift in Sources */,
 				6BF6D1832782C21100B8B5C0 /* CategoryCollectionViewCell.swift in Sources */,
