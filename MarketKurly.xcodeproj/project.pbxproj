@@ -26,6 +26,7 @@
 		6B686417278F331F00BCF053 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B686416278F331F00BCF053 /* UIColor+.swift */; };
 		6B686419278F38EB00BCF053 /* AddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B686418278F38EB00BCF053 /* AddCartViewController.swift */; };
 		6B68641B2790538100BCF053 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68641A2790538100BCF053 /* UIButton+.swift */; };
+		6B84B9C22795CBEA00C8D352 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84B9C12795CBE500C8D352 /* UILabel+.swift */; };
 		6B889BB827882E9800E7FDF7 /* CategoryTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B889BB727882E9800E7FDF7 /* CategoryTableViewHeaderView.swift */; };
 		6B889BBA27883DC200E7FDF7 /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B889BB927883DC200E7FDF7 /* CategoryList.plist */; };
 		6B889BBC278841B300E7FDF7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B889BBB278841B300E7FDF7 /* Category.swift */; };
@@ -47,6 +48,7 @@
 		6B00B8D72778422B004CAE95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B00B8DA2778422B004CAE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B00B8DC2778422B004CAE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B353D902791C23E006CF57D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6B4536212789980B0009778A /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		6B453623278998E60009778A /* HomeContentList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HomeContentList.plist; sourceTree = "<group>"; };
 		6B6576522778F10B00C9EB93 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		6B686416278F331F00BCF053 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		6B686418278F38EB00BCF053 /* AddCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartViewController.swift; sourceTree = "<group>"; };
 		6B68641A2790538100BCF053 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		6B84B9C12795CBE500C8D352 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		6B889BB727882E9800E7FDF7 /* CategoryTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderView.swift; sourceTree = "<group>"; };
 		6B889BB927883DC200E7FDF7 /* CategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
 		6B889BBB278841B300E7FDF7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		6B00B8C227784229004CAE95 = {
 			isa = PBXGroup;
 			children = (
+				6B353D902791C23E006CF57D /* README.md */,
 				6B00B8CD2778422A004CAE95 /* MarketKurly */,
 				6B00B8CC2778422A004CAE95 /* Products */,
 			);
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				6B686413278EB6BE00BCF053 /* UINavigationController+.swift */,
+				6B84B9C12795CBE500C8D352 /* UILabel+.swift */,
 				6B686416278F331F00BCF053 /* UIColor+.swift */,
 				6B68641A2790538100BCF053 /* UIButton+.swift */,
 			);
@@ -276,6 +281,7 @@
 				6BF6D1832782C21100B8B5C0 /* CategoryCollectionViewCell.swift in Sources */,
 				6BF6D1872782C7A800B8B5C0 /* CategoryCollectionView.swift in Sources */,
 				6B00B8CF2778422A004CAE95 /* AppDelegate.swift in Sources */,
+				6B84B9C22795CBEA00C8D352 /* UILabel+.swift in Sources */,
 				6B994369278060AC009E0092 /* CategoryViewController.swift in Sources */,
 				6B686419278F38EB00BCF053 /* AddCartViewController.swift in Sources */,
 				6B00B8D12778422A004CAE95 /* SceneDelegate.swift in Sources */,

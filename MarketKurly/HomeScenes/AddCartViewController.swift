@@ -178,7 +178,7 @@ class AddCartViewController: UIViewController {
         guard let content = content else { return }
         titleLabel.text = content.title
         priceLabel.text = content.price
-        originalPriceLabel.text = content.originalPrice
+        originalPriceLabel.strikedText(text: content.originalPrice)
         addCartButton.setTitle("\(content.price) 장바구니 담기", for: .normal)
     }
 }

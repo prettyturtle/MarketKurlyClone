@@ -93,7 +93,7 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
             guard let discountRate = content.discountRate,
                   let originalPrice = content.originalPrice else { return }
             discountRateLabel.text = "\(discountRate)%"
-            originalPriceLabel.text = originalPrice
+            originalPriceLabel.strikedText(text: originalPrice)
         } else {
             discountRateLabel.isHidden = true
             originalPriceLabel.isHidden = true
