@@ -14,7 +14,12 @@ enum NavigationType {
 
 extension UINavigationController {
     /// Setting NavigationBar
-    func setupNavigationItem(_ target: UIViewController, titleType: NavigationType, image: UIImage?, text: String?) {
+    func setupNavigationItem(
+        _ target: UIViewController,
+        titleType: NavigationType,
+        image: UIImage?,
+        text: String?
+    ) {
         
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = .mainColor
@@ -80,7 +85,11 @@ extension UINavigationController {
         ]
     }
     
-    func setupPresentedNavigationItem(_ target: UIViewController, titleOfNavigationItem: String?, leftBarButtonAction: Selector?) {
+    func setupPresentedNavigationItem(
+        _ target: UIViewController,
+        titleOfNavigationItem: String?,
+        leftBarButtonAction: Selector?
+    ) {
         guard let title = titleOfNavigationItem else { return }
         
         target.navigationItem.title = title

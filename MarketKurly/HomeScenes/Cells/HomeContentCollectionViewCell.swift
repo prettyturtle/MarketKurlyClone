@@ -9,13 +9,13 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-protocol didTapHomeContentCollectionViewCellCartButtonDelegate {
+protocol didTapHomeContentCollectionViewCellCartButtonDelegate: AnyObject {
     func presentAddCartViewController(content: Content?)
 }
 
 class HomeContentCollectionViewCell: UICollectionViewCell {
     
-    var delegate: didTapHomeContentCollectionViewCellCartButtonDelegate?
+    weak var delegate: didTapHomeContentCollectionViewCellCartButtonDelegate?
     
     private var content: Content?
     

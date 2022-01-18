@@ -47,7 +47,6 @@ class MyKurlyViewController: UIViewController {
         tableView.sectionHeaderHeight = 8.0
         tableView.sectionFooterHeight = 0.0
         
-        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         
         return tableView

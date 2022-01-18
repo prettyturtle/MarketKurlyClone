@@ -20,7 +20,10 @@ class CategoryTableView: UIView {
         tableView.sectionFooterHeight = 0.3
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(CategoryTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: CategoryTableViewHeaderView.identifier)
+        tableView.register(
+            CategoryTableViewHeaderView.self,
+            forHeaderFooterViewReuseIdentifier: CategoryTableViewHeaderView.identifier
+        )
         tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: CategoryTableViewCell.identifier)
         
         return tableView
@@ -39,7 +42,10 @@ class CategoryTableView: UIView {
 
 extension CategoryTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CategoryTableViewHeaderView.identifier) as? CategoryTableViewHeaderView else { return nil }
+        
+        guard let header = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: CategoryTableViewHeaderView.identifier
+        ) as? CategoryTableViewHeaderView else { return nil }
         
         let categoryItem = categoryList[section]
         header.setupView(categoryItem: categoryItem, section: section)
@@ -70,7 +76,11 @@ extension CategoryTableView: UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier) as? CategoryTableViewCell else { return UITableViewCell() }
+    
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: CategoryTableViewCell.identifier,
+            for: indexPath
+        ) as? CategoryTableViewCell else { return UITableViewCell() }
         
         let subTitle = categoryList[indexPath.section].subCategory[indexPath.row]
         cell.selectionStyle = .none

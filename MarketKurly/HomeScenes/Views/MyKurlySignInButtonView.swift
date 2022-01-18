@@ -8,13 +8,13 @@
 import UIKit
 import SnapKit
 
-protocol MyKurlySignInButtonViewDelegate {
+protocol MyKurlySignInButtonViewDelegate: AnyObject {
     func moveToSignInViewController()
 }
 
 class MyKurlySignInButtonView: UIView {
     
-    var delegate: MyKurlySignInButtonViewDelegate?
+    weak var delegate: MyKurlySignInButtonViewDelegate?
     
     private lazy var messageLabel: UILabel = {
         let label = UILabel()

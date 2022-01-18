@@ -8,13 +8,13 @@
 import UIKit
 import SnapKit
 
-protocol HomeContentViewCellDelegate {
+protocol HomeContentViewCellDelegate: AnyObject {
     func presentAddCartViewController(content: Content?)
 }
 
 class HomeContentView: UIView {
 
-    var delegate: HomeContentViewCellDelegate?
+    weak var delegate: HomeContentViewCellDelegate?
     
     private let contentSection: ContentSection
     
@@ -35,7 +35,10 @@ class HomeContentView: UIView {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(HomeContentCollectionViewCell.self, forCellWithReuseIdentifier: "HomeContentCollectionViewCell")
+        collectionView.register(
+            HomeContentCollectionViewCell.self,
+            forCellWithReuseIdentifier: "HomeContentCollectionViewCell"
+        )
         
         return collectionView
     }()
@@ -54,13 +57,22 @@ class HomeContentView: UIView {
 }
 
 extension HomeContentView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        
         let width = collectionView.frame.width * 0.4
         let height = collectionView.frame.height
         return CGSize(width: width, height: height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
         let inset: CGFloat = 16.0
         
         return UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
@@ -70,8 +82,16 @@ extension HomeContentView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return contentSection.contentList.count
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeContentCollectionViewCell", for: indexPath) as? HomeContentCollectionViewCell else { return UICollectionViewCell() }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "HomeContentCollectionViewCell",
+            for: indexPath
+        ) as? HomeContentCollectionViewCell else { return UICollectionViewCell() }
         
         let content = contentSection.contentList[indexPath.row]
         cell.setupView(content: content)

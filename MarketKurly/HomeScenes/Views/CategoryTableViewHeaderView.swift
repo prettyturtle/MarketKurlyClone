@@ -16,7 +16,7 @@ class CategoryTableViewHeaderView: UITableViewHeaderFooterView {
     
     static let identifier = "CategoryTableViewHeaderView"
     
-    var delegate: CategoryTableViewHeaderViewDelegate?
+    weak var delegate: CategoryTableViewHeaderViewDelegate?
     
     private lazy var categoryIconImageView: UIImageView = {
         let imageView = UIImageView()

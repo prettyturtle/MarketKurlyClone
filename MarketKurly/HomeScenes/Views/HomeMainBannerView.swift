@@ -20,7 +20,10 @@ class HomeMainBannerView: UIView {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(HomeMainBannerCollectionViewCell.self, forCellWithReuseIdentifier: "HomeMainBannerCollectionViewCell")
+        collectionView.register(
+            HomeMainBannerCollectionViewCell.self,
+            forCellWithReuseIdentifier: "HomeMainBannerCollectionViewCell"
+        )
         
         return collectionView
     }()
@@ -38,17 +41,29 @@ class HomeMainBannerView: UIView {
 }
 
 extension HomeMainBannerView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let width = collectionView.frame.width
         let height = collectionView.frame.height
         return CGSize(width: width, height: height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    ) -> CGFloat {
         return 0
     }
 }
@@ -57,8 +72,14 @@ extension HomeMainBannerView: UICollectionViewDataSource {
         return 5
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeMainBannerCollectionViewCell", for: indexPath) as? HomeMainBannerCollectionViewCell else { return UICollectionViewCell() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "HomeMainBannerCollectionViewCell",
+            for: indexPath
+        ) as? HomeMainBannerCollectionViewCell else { return UICollectionViewCell() }
         
         let index = indexPath.row
         

@@ -38,9 +38,11 @@
 		6BF6D1872782C7A800B8B5C0 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6D1862782C7A800B8B5C0 /* CategoryCollectionView.swift */; };
 		6BF83600278B15310068A3CE /* MyKurlySignInButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF835FF278B15310068A3CE /* MyKurlySignInButtonView.swift */; };
 		6BF83602278BFCEB0068A3CE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF83601278BFCEB0068A3CE /* SignInViewController.swift */; };
+		A064C8BBDEB1246A112501C3 /* Pods_MarketKurly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D170B75F39D3ABDC16E6EB6 /* Pods_MarketKurly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2549BB3E354685AA1A3362DB /* Pods-MarketKurly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketKurly.release.xcconfig"; path = "Target Support Files/Pods-MarketKurly/Pods-MarketKurly.release.xcconfig"; sourceTree = "<group>"; };
 		6B00B8CB2778422A004CAE95 /* MarketKurly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketKurly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B00B8CE2778422A004CAE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B00B8D02778422A004CAE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		6B686418278F38EB00BCF053 /* AddCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartViewController.swift; sourceTree = "<group>"; };
 		6B68641A2790538100BCF053 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		6B84B9C12795CBE500C8D352 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		6B84B9C62796DD7700C8D352 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6B889BB727882E9800E7FDF7 /* CategoryTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderView.swift; sourceTree = "<group>"; };
 		6B889BB927883DC200E7FDF7 /* CategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
 		6B889BBB278841B300E7FDF7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 		6BF6D1862782C7A800B8B5C0 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		6BF835FF278B15310068A3CE /* MyKurlySignInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKurlySignInButtonView.swift; sourceTree = "<group>"; };
 		6BF83601278BFCEB0068A3CE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		6D170B75F39D3ABDC16E6EB6 /* Pods_MarketKurly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketKurly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2E881710C2CC300D069E15D /* Pods-MarketKurly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketKurly.debug.xcconfig"; path = "Target Support Files/Pods-MarketKurly/Pods-MarketKurly.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,7 @@
 				6B686410278EA0F100BCF053 /* Toast in Frameworks */,
 				6B45362A2789A4F90009778A /* Kingfisher in Frameworks */,
 				6B4536272789A4E80009778A /* SnapKit in Frameworks */,
+				A064C8BBDEB1246A112501C3 /* Pods_MarketKurly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,9 +97,12 @@
 		6B00B8C227784229004CAE95 = {
 			isa = PBXGroup;
 			children = (
+				6B84B9C62796DD7700C8D352 /* .swiftlint.yml */,
 				6B353D902791C23E006CF57D /* README.md */,
 				6B00B8CD2778422A004CAE95 /* MarketKurly */,
 				6B00B8CC2778422A004CAE95 /* Products */,
+				867327614DBB731642911523 /* Pods */,
+				7C903A2FE1F3D344FBC489A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +190,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		7C903A2FE1F3D344FBC489A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D170B75F39D3ABDC16E6EB6 /* Pods_MarketKurly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		867327614DBB731642911523 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2E881710C2CC300D069E15D /* Pods-MarketKurly.debug.xcconfig */,
+				2549BB3E354685AA1A3362DB /* Pods-MarketKurly.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B00B8DF2778422B004CAE95 /* Build configuration list for PBXNativeTarget "MarketKurly" */;
 			buildPhases = (
+				8C93E0428B6137F4CAD770B8 /* [CP] Check Pods Manifest.lock */,
 				6B00B8C72778422A004CAE95 /* Sources */,
 				6B00B8C82778422A004CAE95 /* Frameworks */,
 				6B00B8C92778422A004CAE95 /* Resources */,
+				6B84B9C52796D9CE00C8D352 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -257,6 +285,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B84B9C52796D9CE00C8D352 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		8C93E0428B6137F4CAD770B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarketKurly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B00B8C72778422A004CAE95 /* Sources */ = {
@@ -422,6 +493,7 @@
 		};
 		6B00B8E02778422B004CAE95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2E881710C2CC300D069E15D /* Pods-MarketKurly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -449,6 +521,7 @@
 		};
 		6B00B8E12778422B004CAE95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2549BB3E354685AA1A3362DB /* Pods-MarketKurly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
