@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     }()
     
     private lazy var homeMainBannerView = HomeMainBannerView(frame: .zero)
+    private lazy var homeFooterView = HomeFooterView()
     
     private lazy var scrollToTopButton: UIButton = {
         let button = UIButton()
@@ -120,6 +121,7 @@ private extension HomeViewController {
             homeContentView.delegate = self
             stackView.addArrangedSubview(homeContentView)
         }
+        stackView.addArrangedSubview(homeFooterView)
         
         view.addSubview(scrollToTopButton)
         scrollToTopButton.snp.makeConstraints { make in
