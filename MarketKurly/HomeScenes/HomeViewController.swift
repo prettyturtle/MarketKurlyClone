@@ -27,6 +27,30 @@ class HomeViewController: UIViewController {
     
     private lazy var homeMainBannerView = HomeMainBannerView(frame: .zero)
     
+    private lazy var scrollToTopButton: UIButton = {
+        let button = UIButton()
+        
+        button.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        button.tintColor = .label
+        button.backgroundColor = .systemBackground
+        button.layer.borderColor = UIColor.separator.cgColor
+        button.layer.borderWidth = 0.4
+        button.layer.cornerRadius = 25.0
+        
+        button.isHidden = true
+        
+        button.addTarget(
+            self,
+            action: #selector(didTapScrollToTopButton),
+            for: .touchUpInside
+        )
+        
+        return button
+    }()
+    @objc func didTapScrollToTopButton() {
+        scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -38,6 +62,22 @@ class HomeViewController: UIViewController {
         )
         setupLayout()
         view.backgroundColor = .systemBackground
+        scrollView.delegate = self
+    }
+}
+
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let criteria: CGFloat = UIScreen.main.bounds.height / 4
+        
+        switch scrollView.contentOffset.y {
+        case (...criteria):
+            scrollToTopButton.isHidden = true
+        case (criteria...):
+            scrollToTopButton.isHidden = false
+        default:
+            break
+        }
     }
 }
 
@@ -58,7 +98,7 @@ private extension HomeViewController {
         view.addSubview(scrollView)
         
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
         scrollView.addSubview(scrollContentView)
@@ -79,6 +119,12 @@ private extension HomeViewController {
             let homeContentView = HomeContentView(contentSection: $0)
             homeContentView.delegate = self
             stackView.addArrangedSubview(homeContentView)
+        }
+        
+        view.addSubview(scrollToTopButton)
+        scrollToTopButton.snp.makeConstraints { make in
+            make.width.height.equalTo(50.0)
+            make.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(16.0)
         }
     }
 }
