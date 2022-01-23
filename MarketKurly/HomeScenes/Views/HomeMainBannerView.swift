@@ -10,6 +10,8 @@ import SnapKit
 
 class HomeMainBannerView: UIView {
     
+    private var bannerList = [Banner]()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -32,6 +34,7 @@ class HomeMainBannerView: UIView {
         super.init(frame: frame)
         
         setupLayout()
+        fetchData()
     }
     
     required init?(coder: NSCoder) {
@@ -69,7 +72,7 @@ extension HomeMainBannerView: UICollectionViewDelegateFlowLayout {
 }
 extension HomeMainBannerView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return bannerList.count
     }
     
     func collectionView(
@@ -81,15 +84,26 @@ extension HomeMainBannerView: UICollectionViewDataSource {
             for: indexPath
         ) as? HomeMainBannerCollectionViewCell else { return UICollectionViewCell() }
         
-        let index = indexPath.row
+        let banner = bannerList[indexPath.row]
         
-        cell.setupView(index: index)
+        cell.setupView(banner: banner)
         
         return cell
     }
 }
 
 private extension HomeMainBannerView {
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "HomeBannerList", withExtension: "plist") else { return }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Banner].self, from: data)
+            bannerList = result
+        } catch {
+            print("ERROR - HomeMainBannerView - fetchData")
+        }
+    }
     func setupLayout() {
         addSubview(collectionView)
         

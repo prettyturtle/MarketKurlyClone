@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class HomeMainBannerCollectionViewCell: UICollectionViewCell {
     private lazy var bannerImageView: UIImageView = {
@@ -18,10 +19,10 @@ class HomeMainBannerCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    func setupView(index: Int) {
+    func setupView(banner: Banner) {
         setupLayout()
         
-        bannerImageView.image = UIImage(named: "bannerImage\(index)")
+        bannerImageView.kf.setImage(with: banner.image)
     }
 }
 
