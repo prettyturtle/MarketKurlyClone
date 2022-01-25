@@ -30,4 +30,28 @@ extension UIButton {
                 
         return button
     }
+    
+    func checkButton(tag: Int) -> UIButton {
+        self.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+        self.tintColor = .tertiaryLabel
+        self.contentHorizontalAlignment = .fill
+        self.contentVerticalAlignment = .fill
+        self.tag = tag
+        self.addTarget(self, action: #selector(didTapCheckButton(_:)), for: .touchUpInside)
+        
+        self.snp.makeConstraints { make in
+            make.width.height.equalTo(25.0)
+        }
+        return self
+    }
+    @objc func didTapCheckButton(_ sender: UIButton) {
+        if sender.tintColor != .mainColor {
+            sender.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+            sender.tintColor = .mainColor
+        } else {
+            sender.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+            sender.tintColor = .tertiaryLabel
+        }
+        print(sender.tag)
+    }
 }

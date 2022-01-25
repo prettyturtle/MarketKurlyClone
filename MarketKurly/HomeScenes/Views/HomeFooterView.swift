@@ -88,7 +88,7 @@ class HomeFooterView: UIView {
         label.numberOfLines = 0
         label.text = infoText
         
-        label.changeTextColor(from: infoText, at: changedColorText)
+        label.changeTextColor(from: infoText, at: changedColorText, color: .mainColor)
         
         return label
     }()

@@ -14,14 +14,8 @@ class SignInViewController: UIViewController {
     private lazy var idTextField: UITextField = {
         let textField = UITextField()
         
-        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
-        textField.leftViewMode = .always
         textField.clearButtonMode = .whileEditing
-        textField.placeholder = "아이디를 입력해주세요"
-        textField.layer.borderWidth = 0.5
-        textField.layer.borderColor = UIColor.separator.cgColor
-        textField.layer.cornerRadius = 4.0
-        
+        textField.customStyle(placeholder: "아이디를 입력해주세요")
         textField.delegate = self
         
         return textField
@@ -30,15 +24,9 @@ class SignInViewController: UIViewController {
     private lazy var pwTextField: UITextField = {
         let textField = UITextField()
         
-        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
-        textField.leftViewMode = .always
         textField.clearButtonMode = .whileEditing
-        textField.placeholder = "비밀번호를 입력해주세요"
-        textField.layer.borderWidth = 0.5
-        textField.layer.borderColor = UIColor.separator.cgColor
-        textField.layer.cornerRadius = 4.0
+        textField.customStyle(placeholder: "비밀번호를 입력해주세요")
         textField.isSecureTextEntry = true
-        
         textField.delegate = self
         
         return textField
@@ -127,8 +115,12 @@ class SignInViewController: UIViewController {
         self,
         title: "회원가입",
         isReversed: true,
-        action: #selector(dismissSignInViewController)
+        action: #selector(didTapMoveToSignUpButton)
     )
+    @objc func didTapMoveToSignUpButton() {
+        let signUpViewController = SignUpViewController()
+        navigationController?.pushViewController(signUpViewController, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -172,13 +164,11 @@ private extension SignInViewController {
         idTextField.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(16.0)
             make.leading.trailing.equalToSuperview().inset(16.0)
-            make.height.equalTo(48.0)
         }
         pwTextField.snp.makeConstraints { make in
             make.top.equalTo(idTextField.snp.bottom).offset(8.0)
             make.leading.equalTo(idTextField.snp.leading)
             make.trailing.equalTo(idTextField.snp.trailing)
-            make.height.equalTo(48.0)
         }
         signInButton.snp.makeConstraints { make in
             make.top.equalTo(pwTextField.snp.bottom).offset(16.0)
@@ -193,7 +183,6 @@ private extension SignInViewController {
             make.top.equalTo(findButtonStackView.snp.bottom).offset(48.0)
             make.leading.equalTo(idTextField.snp.leading)
             make.trailing.equalTo(idTextField.snp.trailing)
-            make.height.equalTo(48.0)
         }
     }
 }

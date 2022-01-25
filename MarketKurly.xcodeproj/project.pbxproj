@@ -37,6 +37,8 @@
 		6BB48109279D77D500E71462 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6BB48108279D77D500E71462 /* Kingfisher */; };
 		6BB48111279DC6A400E71462 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB48110279DC6A400E71462 /* Storyboard.storyboard */; };
 		6BC3C8B5278ACEAB00004210 /* MyKurlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3C8B4278ACEAB00004210 /* MyKurlyViewController.swift */; };
+		6BE899DD279F3C3E005A3F27 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE899DC279F3C3E005A3F27 /* SignUpViewController.swift */; };
+		6BE899DF279F6CDE005A3F27 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE899DE279F6CDE005A3F27 /* UITextField+.swift */; };
 		6BF6D1832782C21100B8B5C0 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6D1822782C21100B8B5C0 /* CategoryCollectionViewCell.swift */; };
 		6BF6D1852782C67C00B8B5C0 /* CategoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6D1842782C67B00B8B5C0 /* CategoryTableView.swift */; };
 		6BF6D1872782C7A800B8B5C0 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6D1862782C7A800B8B5C0 /* CategoryCollectionView.swift */; };
@@ -78,6 +80,8 @@
 		6B994368278060AC009E0092 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		6BB48110279DC6A400E71462 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		6BC3C8B4278ACEAB00004210 /* MyKurlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKurlyViewController.swift; sourceTree = "<group>"; };
+		6BE899DC279F3C3E005A3F27 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		6BE899DE279F6CDE005A3F27 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		6BF6D1822782C21100B8B5C0 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		6BF6D1842782C67B00B8B5C0 /* CategoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableView.swift; sourceTree = "<group>"; };
 		6BF6D1862782C7A800B8B5C0 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				6B994368278060AC009E0092 /* CategoryViewController.swift */,
 				6BC3C8B4278ACEAB00004210 /* MyKurlyViewController.swift */,
 				6BF83601278BFCEB0068A3CE /* SignInViewController.swift */,
+				6BE899DC279F3C3E005A3F27 /* SignUpViewController.swift */,
 				6B65765E2779CA8C00C9EB93 /* Views */,
 				6B6576592778F9C600C9EB93 /* Cells */,
 			);
@@ -188,6 +193,7 @@
 				6B84B9C12795CBE500C8D352 /* UILabel+.swift */,
 				6B686416278F331F00BCF053 /* UIColor+.swift */,
 				6B68641A2790538100BCF053 /* UIButton+.swift */,
+				6BE899DE279F6CDE005A3F27 /* UITextField+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				6B4536222789980B0009778A /* Content.swift in Sources */,
 				6BF83600278B15310068A3CE /* MyKurlySignInButtonView.swift in Sources */,
 				6B6576582778F9BF00C9EB93 /* HomeMainBannerCollectionViewCell.swift in Sources */,
+				6BE899DD279F3C3E005A3F27 /* SignUpViewController.swift in Sources */,
 				6BC3C8B5278ACEAB00004210 /* MyKurlyViewController.swift in Sources */,
 				6B65765D2779CA7000C9EB93 /* HomeContentView.swift in Sources */,
 				6B686414278EB6BE00BCF053 /* UINavigationController+.swift in Sources */,
@@ -370,6 +377,7 @@
 				6B56380527982936006E6361 /* Banner.swift in Sources */,
 				6B84B9C22795CBEA00C8D352 /* UILabel+.swift in Sources */,
 				6B994369278060AC009E0092 /* CategoryViewController.swift in Sources */,
+				6BE899DF279F6CDE005A3F27 /* UITextField+.swift in Sources */,
 				6B686419278F38EB00BCF053 /* AddCartViewController.swift in Sources */,
 				6B00B8D12778422A004CAE95 /* SceneDelegate.swift in Sources */,
 				6B889BBC278841B300E7FDF7 /* Category.swift in Sources */,
