@@ -1,5 +1,5 @@
-imgs/
-.DS_Store
+/imgs/
+/.DS_Store
 # Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,cocoapods
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,cocoapods
 
